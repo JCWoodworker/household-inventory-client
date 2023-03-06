@@ -1,0 +1,14 @@
+@use '../base/' as base;
+
+.image-row {
+	@include base.flex-row-center;
+}
+
+.screenshot {
+	@include base.border($radius: true);
+	max-width: 300px;
+	margin-bottom: 1rem;
+	&:hover {
+		@include base.border($shadow-light-full: true)
+	}
+}

@@ -1,0 +1,78 @@
+@use "./colors.scss" as colors;
+
+// Flexbox mixins
+
+@mixin flex-col-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-row-center {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-row-start {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+// Text mixins
+
+@mixin headings {
+	font-weight: 600;
+	margin: 1rem;
+	margin-bottom: 4rem;
+	padding: 1rem;
+	color: colors.$MainScheme1;
+	background-color: colors.$MainScheme4-transparent;
+	@include border($shadow-light: true, $radius: true, $border: true, $color: colors.$MainScheme1, $thickness: 1px);
+}
+
+@mixin heading-2-3 {
+	font-weight: 500;
+	padding: 0.5rem;
+	color: white;
+}
+
+// container mixins
+
+@mixin container {
+	color: colors.$MainScheme4-transparent;
+	background-color: colors.$MainScheme1;
+}
+
+@mixin border(
+	$shadow-light: false,
+	$shadow-light-full: false,
+	$shadow-dark: false,
+	$radius: false,
+	$border: false,
+	$thickness: 0px,
+	$color: colors.$MainScheme4
+) {
+	@if $shadow-dark {
+		box-shadow: colors.$box-shadow-dark;
+	}
+	@if $shadow-light {
+		box-shadow: colors.$box-shadow-light;
+	}
+	@if $shadow-light-full {
+		box-shadow: colors.$box-shadow-light-full;
+	}
+	@if $radius {
+		border-radius: 0.25rem;
+	}
+	@if $border {
+		border: $thickness solid $color;
+	}
+}

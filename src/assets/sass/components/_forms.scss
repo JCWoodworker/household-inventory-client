@@ -1,0 +1,58 @@
+@use "../base/" as base;
+
+.form-container {
+	@include base.flex-col-center;
+	gap: 1rem;
+	color: base.$MainScheme1;
+	background-color: base.$MainScheme4;
+	@include base.border(
+		$shadow-light: true,
+		$border: true,
+		$color: base.$MainScheme1,
+		$thickness: 1px,
+		$radius: true
+	);
+	margin: 0.5rem;
+	padding: 2rem;
+	width: fit-content;
+	.form-groups-container {
+		@include base.flex-row-center;
+		gap: 2rem;
+	}
+	div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	label {
+		text-align: left;
+		color: base.$MainScheme1;
+		font-size: 1rem;
+		font-weight: 700;
+	};
+	input, textarea {
+		@include base.border(
+			$shadow-dark: false,
+			$border: true,
+			$thickness: 2px,
+			$color: base.$MainScheme1
+		);
+		padding: 0.5rem;
+		background-color: base.$MainScheme4;
+		color: base.$MainScheme1;
+		font-size: 1rem;
+		font-weight: 700;
+		&:focus {
+			outline: none;
+			background-color: base.$MainScheme4;
+			color: base.$MainScheme1;
+		}
+	}
+	p {
+		text-align: center;
+	}
+}
+
+p {
+	color: base.$MainScheme1;
+}

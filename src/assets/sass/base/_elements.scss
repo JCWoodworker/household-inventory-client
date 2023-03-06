@@ -1,0 +1,42 @@
+@use './colors' as colors;
+@use './mixins' as mixins;
+@use './typeography' as typeography;
+
+body {
+  font-family: typeography.$ubuntu;
+  background-color: colors.$MainScheme4;
+}
+
+h1 {
+  font-size: 2rem;
+  @include mixins.headings;
+}
+
+h2 {
+  font-size: 2rem;
+  @include mixins.heading-2-3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  @include mixins.heading-2-3;
+}
+
+p {
+  color: colors.$MainScheme1
+}
+
+a {
+  color: colors.$MainScheme1;
+  text-decoration: none;
+}
+
+ul {
+  color: colors.$MainScheme1;
+  list-style-type: none;
+  @include mixins.flex-row-center
+}
+
+li {
+  margin: 0.5rem;
+}

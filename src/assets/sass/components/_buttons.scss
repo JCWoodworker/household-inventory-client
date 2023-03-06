@@ -1,0 +1,16 @@
+@use "../base/colors.scss";
+@use "../base/mixins.scss";
+
+.clickable-button {
+	color: colors.$MainScheme4;
+	background-color: colors.$MainScheme1;
+	@include mixins.border();
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: 700;
+	&:hover {
+		cursor: pointer;
+		color: colors.$MainScheme4;
+		background-color: colors.$Accent1;
+	}
+}
